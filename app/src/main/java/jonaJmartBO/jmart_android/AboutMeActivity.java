@@ -21,17 +21,17 @@ import com.android.volley.toolbox.Volley;
 import jonaJmartBO.jmart_android.request.RegisterStoreRequest;
 
 public class AboutMeActivity extends AppCompatActivity {
-    private TextView tv_userName;
-    private TextView tv_userEmail;
-    private TextView tv_userBalance;
+    private TextView textUserName;
+    private TextView textUserEmail;
+    private TextView textUserBalance;
     private Button btnTopUp;
     private Button btnRegisterStore;
-    private EditText et_topUpAmount;
+    private EditText inputTopUpAmount;
     private CardView cv_storeExists;
     private CardView cv_registerStore;
-    private EditText et_storeName;
-    private EditText et_storeAddress;
-    private EditText et_storePhoneNumber;
+    private EditText inputStoreName;
+    private EditText inputStoreAddress;
+    private EditText inputStorePhoneNumber;
     private Button btnRegisterStoreCancel;
     private Button btnRegisterStoreConfirm;
     private TextView tv_storeNameF;
@@ -44,22 +44,22 @@ public class AboutMeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_me);
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        tv_userName = findViewById(R.id.textUserName);
-        tv_userEmail = findViewById(R.id.textUserEmail);
-        tv_userBalance = findViewById(R.id.textUserBalance);
-        et_topUpAmount = findViewById(R.id.inputTopUpAmount);
-        tv_userName.setText(LoginActivity.getLoggedAccount().name);
-        tv_userEmail.setText(LoginActivity.getLoggedAccount().email);
-        tv_userBalance.setText(String.valueOf(LoginActivity.getLoggedAccount().balance));
         btnTopUp = findViewById(R.id.buttonTopUp);
         btnRegisterStore = findViewById(R.id.buttonRegisterStore);
         cv_registerStore = findViewById(R.id.cv_registerStore);
         cv_storeExists = findViewById(R.id.cv_storeExists);
-        et_storeName = findViewById(R.id.et_storeName);
-        et_storeAddress = findViewById(R.id.et_storeAddress);
-        et_storePhoneNumber = findViewById(R.id.et_storePhoneNumber);
+        inputStoreName = findViewById(R.id.et_storeName);
+        inputStoreAddress = findViewById(R.id.et_storeAddress);
+        inputStorePhoneNumber = findViewById(R.id.et_storePhoneNumber);
         btnRegisterStoreCancel = findViewById(R.id.btnRegisterStoreCancel);
         btnRegisterStoreConfirm = findViewById(R.id.btnRegisterStoreConfirm);
+        textUserName = findViewById(R.id.textUserName);
+        textUserEmail = findViewById(R.id.textUserEmail);
+        textUserBalance = findViewById(R.id.textUserBalance);
+        inputTopUpAmount = findViewById(R.id.inputTopUpAmount);
+        textUserName.setText(LoginActivity.getLoggedAccount().name);
+        textUserEmail.setText(LoginActivity.getLoggedAccount().email);
+        textUserBalance.setText(String.valueOf(LoginActivity.getLoggedAccount().balance));
         if(LoginActivity.getLoggedAccount().store != null){
             btnRegisterStore.setVisibility(View.GONE);
             cv_storeExists.setVisibility(View.VISIBLE);
@@ -88,9 +88,9 @@ public class AboutMeActivity extends AppCompatActivity {
         btnRegisterStoreConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = et_storeName.getText().toString();
-                String address = et_storeAddress.getText().toString();
-                String phoneNumber = et_storePhoneNumber.getText().toString();
+                String name = inputStoreName.getText().toString();
+                String address = inputStoreAddress.getText().toString();
+                String phoneNumber = inputStorePhoneNumber.getText().toString();
                 RegisterStoreRequest registerStoreRequest = new RegisterStoreRequest(LoginActivity.getLoggedAccount().id, name, address ,phoneNumber, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
