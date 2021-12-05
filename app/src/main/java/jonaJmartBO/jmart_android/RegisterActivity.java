@@ -21,19 +21,16 @@ public class RegisterActivity extends AppCompatActivity {
         EditText RegisterName = findViewById(R.id.RegisterName);
         EditText RegisterEmail = findViewById(R.id.RegisterEmail);
         EditText RegisterPassword = findViewById(R.id.RegisterPassword);
-        Button registerButton = findViewById(R.id.Registerbutton);
+        Button RegisterButton = findViewById(R.id.Registerbutton);
 
-        registerButton.setOnClickListener(v -> {
+        RegisterButton.setOnClickListener(v -> {
             Response.Listener<String> listener = response -> {
                 try {
-                    JSONObject jsonObj = new JSONObject(response);
-                    if (jsonObj != null){
-                        Toast.makeText(getApplicationContext(), "Register successful", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    JSONObject jsonObject = new JSONObject(response);
+                    if(jsonObject != null) {
+                        Toast.makeText(RegisterActivity.this, "Register Successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                         startActivity(intent);
-                    }
-                    else{
-                        Toast.makeText(getApplicationContext(), "Register unsuccessful, jsonObj null", Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException err){
                     Toast.makeText(RegisterActivity.this, err.getMessage(), Toast.LENGTH_SHORT).show();
