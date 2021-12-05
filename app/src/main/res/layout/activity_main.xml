@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/mainTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicatorColor="#03A9F4">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/ti_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRODUCTS" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/ti_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FILTER" />
+
+    </com.google.android.material.tabs.TabLayout>
+    <!--Product CardView-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_product"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainTabLayout"
+        tools:visibility="invisible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonPrevious"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="300dp"
+                android:backgroundTint="#2298FF"
+                android:text="Prev"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonNext"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:backgroundTint="#2298FF"
+                android:text="Next"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonPrevious"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/buttonPrevious" />
+
+            <Button
+                android:id="@+id/buttonGo"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="#2298FF"
+                android:text="Go"
+                app:layout_constraintBottom_toBottomOf="@+id/inputPage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/inputPage" />
+
+            <EditText
+                android:id="@+id/inputPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="14dp"
+                android:ems="4"
+                android:hint="Page"
+                android:inputType="number"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonNext"
+                app:layout_constraintEnd_toStartOf="@+id/buttonGo"
+                app:layout_constraintTop_toTopOf="@+id/buttonNext" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listProduct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonPrevious" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+    <!--Filter CardView-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_filter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainTabLayout"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/productNamefield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="17"
+                android:hint="Product Name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textProductName" />
+
+            <EditText
+                android:id="@+id/lowestPriceField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="220dp"
+                android:ems="6"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textLowestPrice" />
+
+            <EditText
+                android:id="@+id/highestPriceField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="220dp"
+                android:ems="6"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="50000"
+                app:layout_constraintBottom_toBottomOf="@+id/lowestPriceField"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lowestPriceField" />
+
+            <TextView
+                android:id="@+id/textProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="310dp"
+                android:text="Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="to"
+                app:layout_constraintBottom_toBottomOf="@+id/lowestPriceField"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textHighestPrice" />
+
+            <TextView
+                android:id="@+id/textLowestPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="260dp"
+                android:text="Lowest Price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productNamefield" />
+
+            <TextView
+                android:id="@+id/textProductCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="250dp"
+                android:text="Product Condition"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lowestPriceField" />
+
+            <TextView
+                android:id="@+id/textProductCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="250dp"
+                android:text="Product Category"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textProductCondition" />
+
+            <TextView
+                android:id="@+id/textHighestPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="180dp"
+                android:text="Highest Price"
+                app:layout_constraintBottom_toBottomOf="@+id/textLowestPrice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textLowestPrice" />
+
+            <CheckBox
+                android:id="@+id/checkNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:checked="false"
+
+                android:text="New"
+                app:layout_constraintBottom_toBottomOf="@+id/textProductCondition"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textProductCondition"
+                app:layout_constraintTop_toTopOf="@+id/textProductCondition" />
+
+            <CheckBox
+                android:id="@+id/checkUsed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="170dp"
+                android:text="Used"
+
+                app:layout_constraintBottom_toBottomOf="@+id/checkNew"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textProductCondition"
+                app:layout_constraintTop_toTopOf="@+id/checkNew" />
+
+            <Button
+                android:id="@+id/buttonApply"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="#2298FF"
+                android:text="Apply"
+                app:iconTint="#03A9F4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/buttonClear"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55dp"
+                android:layout_marginEnd="60dp"
+                android:backgroundTint="#2298FF"
+                android:text="Clear"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonApply"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buttonApply"
+                app:layout_constraintTop_toTopOf="@+id/buttonApply" />
+
+            <Spinner
+                android:id="@+id/filterCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:entries="@array/productCategory"
+                android:gravity="end"
+                android:minHeight="12dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="@+id/textProductCategory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textProductCategory" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
