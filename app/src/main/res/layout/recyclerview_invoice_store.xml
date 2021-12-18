@@ -170,7 +170,7 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="no resi"
+        android:text="receipt"
         android:textAlignment="viewStart"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"

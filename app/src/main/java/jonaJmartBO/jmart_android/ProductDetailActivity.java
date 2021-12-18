@@ -92,7 +92,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Fetch product unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Fetch product failed", Toast.LENGTH_LONG).show();
                 finish();
             }
         });

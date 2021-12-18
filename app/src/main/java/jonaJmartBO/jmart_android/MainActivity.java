@@ -162,17 +162,17 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
                             adapter.refresh(productNames);
                         } catch (Exception e) {
                             e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "Filter product unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Filter product failed", Toast.LENGTH_LONG).show();
                         }
 
                         cv_product.setVisibility(View.VISIBLE);
                         cv_filter.setVisibility(View.INVISIBLE);
-                        Toast.makeText(getApplicationContext(), "Filtering Succesful", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Filtering Success", Toast.LENGTH_LONG).show();
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), "Filtering error, check again.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Filtering error", Toast.LENGTH_LONG).show();
                     }
                 });
                 queue.add(filterRequest);
@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Testing Clear", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Testing", Toast.LENGTH_SHORT).show();
                 inputProductName.setText("");
                 inputLowestPrice.setText("");
                 inputHighestPrice.setText("");
@@ -209,13 +209,13 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Fetch product unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "load product failed", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Fetch product unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "loadproduct failed", Toast.LENGTH_LONG).show();
             }
         });
         queue.add(fetchProductsRequest);

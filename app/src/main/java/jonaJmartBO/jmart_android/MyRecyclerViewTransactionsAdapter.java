@@ -19,7 +19,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
-import java.security.AccessController;
 import java.util.List;
 
 import jonaJmartBO.jmart_android.model.Payment;
@@ -45,7 +44,7 @@ public class MyRecyclerViewTransactionsAdapter extends RecyclerView.Adapter<MyRe
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.recycleview_transaction, parent, false);
+        View view = mInflater.inflate(R.layout.recycleview_invoice_default, parent, false);
         return new ViewHolder(view);
     }
 
@@ -145,14 +144,14 @@ public class MyRecyclerViewTransactionsAdapter extends RecyclerView.Adapter<MyRe
                                 Toast.makeText(mInflater.getContext(), "Cancel successful", Toast.LENGTH_LONG).show();
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                Toast.makeText(mInflater.getContext(), "Cancel unsuccessful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mInflater.getContext(), "Cancel failed", Toast.LENGTH_LONG).show();
                             }
                         }
 
                     }, new Response.ErrorListener(){
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(mInflater.getContext(), "Cancel unsuccessful", Toast.LENGTH_LONG).show();
+                            Toast.makeText(mInflater.getContext(), "Cancel failed", Toast.LENGTH_LONG).show();
                         }
                     });
                     RequestQueue queue = Volley.newRequestQueue(mInflater.getContext());

@@ -136,19 +136,19 @@ public class InvoiceHistoryActivity extends AppCompatActivity implements MyRecyc
                     while(reader.hasNext()){
                         myTransactions.add(gson.fromJson(reader, Payment.class));
                     }
-                    Toast.makeText(getApplicationContext(), "Fetch transactions succesful!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Load transactions succesful!", Toast.LENGTH_LONG).show();
                     if(refreshAdapter){
                         adapterTransactions.refresh(myTransactions);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Fetch transactions unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Load transactions failed, error", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Fetch transactions unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Load transactions failed, error ", Toast.LENGTH_LONG).show();
             }
         });
         queue.add(fetchProductsRequest);
@@ -166,19 +166,19 @@ public class InvoiceHistoryActivity extends AppCompatActivity implements MyRecyc
                     while(reader.hasNext()){
                         storeInvoices.add(gson.fromJson(reader, Payment.class));
                     }
-                    Toast.makeText(getApplicationContext(), "Fetch invoices succesful!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "load invoices succesful!", Toast.LENGTH_LONG).show();
                     if(refreshAdapter){
                         adapterInvoices.refresh(storeInvoices);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Fetch invoices unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "load invoices failed, error ", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Fetch invoices unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Fetch invoices failed, error", Toast.LENGTH_LONG).show();
             }
         });
         queue.add(fetchProductsRequest);
@@ -195,21 +195,21 @@ public class InvoiceHistoryActivity extends AppCompatActivity implements MyRecyc
                     while(reader.hasNext()){
                         invoiceProducts.add(gson.fromJson(reader, Product.class));
                     }
-                    System.out.println("1INVOICES:" + invoiceProducts);
+                    System.out.println("INVOICES1:" + invoiceProducts);
                     if(refreshAdapter){
-                        System.out.println("2INVOICES:" + invoiceProducts);
+                        System.out.println("INVOICES2:" + invoiceProducts);
                         adapterTransactions.refreshProducts(invoiceProducts);
-                        System.out.println("3INVOICES:" + invoiceProducts);
+                        System.out.println("INVOICES3:" + invoiceProducts);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Fetch product unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Fetch product failed", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Fetch product unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Fetch product failed", Toast.LENGTH_LONG).show();
             }
         });
         queue.add(fetchInvoiceProductsRequest);
@@ -227,21 +227,21 @@ public class InvoiceHistoryActivity extends AppCompatActivity implements MyRecyc
                     while(reader.hasNext()){
                         transactionProducts.add(gson.fromJson(reader, Product.class));
                     }
-                    System.out.println("1TRANSACTIONS:" + transactionProducts);
+                    System.out.println("TRANSACTIONS1:" + transactionProducts);
                     if(refreshAdapter){
-                        System.out.println("2TRANSACTIONS:" + transactionProducts);
+                        System.out.println("TRANSACTIONS2:" + transactionProducts);
                         adapterTransactions.refreshProducts(transactionProducts);
-                        System.out.println("3TRANSACTIONS:" + transactionProducts);
+                        System.out.println("TRANSACTIONS3:" + transactionProducts);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Fetch product unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Fetch product failed", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Fetch product unsuccessful, error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Fetch product failed", Toast.LENGTH_LONG).show();
             }
         });
         queue2.add(fetchTransactionProductsRequest);

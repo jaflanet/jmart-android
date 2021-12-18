@@ -1,14 +1,11 @@
 package jonaJmartBO.jmart_android;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,7 +50,7 @@ public class MyRecyclerViewInvoicesAdapter extends RecyclerView.Adapter<MyRecycl
     //add new product to list
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.recyclerview_invoice, parent, false);
+        View view = mInflater.inflate(R.layout.recyclerview_invoice_store, parent, false);
         return new ViewHolder(view);
     }
 
@@ -158,13 +155,13 @@ public class MyRecyclerViewInvoicesAdapter extends RecyclerView.Adapter<MyRecycl
                                 Toast.makeText(mInflater.getContext(), "Accept successful", Toast.LENGTH_LONG).show();
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                Toast.makeText(mInflater.getContext(), "Accept unsuccessful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mInflater.getContext(), "Accept failed", Toast.LENGTH_LONG).show();
                             }
                         }
                     }, new Response.ErrorListener(){
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(mInflater.getContext(), "Accept unsuccessful", Toast.LENGTH_LONG).show();
+                            Toast.makeText(mInflater.getContext(), "Accept failed", Toast.LENGTH_LONG).show();
                         }
                     });
                     RequestQueue queue = Volley.newRequestQueue(mInflater.getContext());
@@ -182,13 +179,13 @@ public class MyRecyclerViewInvoicesAdapter extends RecyclerView.Adapter<MyRecycl
                                 notifyDataSetChanged();
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                Toast.makeText(mInflater.getContext(), "Cancel unsuccessful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mInflater.getContext(), "Cancel failed", Toast.LENGTH_LONG).show();
                             }
                         }
                     }, new Response.ErrorListener(){
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(mInflater.getContext(), "Cancel unsuccessful", Toast.LENGTH_LONG).show();
+                            Toast.makeText(mInflater.getContext(), "Cancel failed", Toast.LENGTH_LONG).show();
                         }
                     });
                     RequestQueue queue = Volley.newRequestQueue(mInflater.getContext());
@@ -207,13 +204,13 @@ public class MyRecyclerViewInvoicesAdapter extends RecyclerView.Adapter<MyRecycl
                                 notifyDataSetChanged();
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                Toast.makeText(mInflater.getContext(), "Submit unsuccessful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mInflater.getContext(), "Submit failed", Toast.LENGTH_LONG).show();
                             }
                         }
                     }, new Response.ErrorListener(){
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(mInflater.getContext(), "Submit unsuccessful", Toast.LENGTH_LONG).show();
+                            Toast.makeText(mInflater.getContext(), "Submit failed", Toast.LENGTH_LONG).show();
                         }
                     });
                     RequestQueue queue = Volley.newRequestQueue(mInflater.getContext());
