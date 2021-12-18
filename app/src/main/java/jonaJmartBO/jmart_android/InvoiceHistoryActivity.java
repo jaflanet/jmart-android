@@ -178,7 +178,7 @@ public class InvoiceHistoryActivity extends AppCompatActivity implements MyRecyc
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Fetch invoices failed, error", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "load invoices failed, error", Toast.LENGTH_LONG).show();
             }
         });
         queue.add(fetchProductsRequest);
@@ -203,13 +203,13 @@ public class InvoiceHistoryActivity extends AppCompatActivity implements MyRecyc
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Fetch product failed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "load product failed", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Fetch product failed", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "load product failed", Toast.LENGTH_LONG).show();
             }
         });
         queue.add(fetchInvoiceProductsRequest);
@@ -235,13 +235,13 @@ public class InvoiceHistoryActivity extends AppCompatActivity implements MyRecyc
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Fetch product failed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "load product failed", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Fetch product failed", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "load product failed", Toast.LENGTH_LONG).show();
             }
         });
         queue2.add(fetchTransactionProductsRequest);
