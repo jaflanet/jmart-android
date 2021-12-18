@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="jonaJmartBO.jmart_android">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,10 +13,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jmartandroid"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CreateProductActivity" android:exported="false"/>
-        <activity android:name=".AboutMeActivity" android:exported="false" android:label="About Me"/>
-        <activity android:name=".MainActivity" android:exported="false" android:label="Jmart"/>
-        <activity android:name=".RegisterActivity" android:exported="false" android:label="Register"/>
+        <activity
+            android:name=".InvoiceHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutMeActivity"
+            android:exported="false"
+            android:label="About Me" />
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false"
+            android:label="Product Detail" />
+        <activity
+            android:name=".CreateProductActivity"
+            android:exported="false"
+            android:label="Create Product" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="Jmart" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:label="Register" />
+        <activity
+            android:name=".MyRecyclerViewInvoicesAdapter"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".MyRecyclerViewTransactionsAdapter"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">

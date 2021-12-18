@@ -1,5 +1,9 @@
 package jonaJmartBO.jmart_android.model;
 
+/**
+ * @author Jona
+ * @version 18/12/21
+ */
 public class Account extends Serializable{
     public double balance;
     public String email;

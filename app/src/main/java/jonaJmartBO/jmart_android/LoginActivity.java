@@ -22,17 +22,18 @@ import jonaJmartBO.jmart_android.model.Account;
 import jonaJmartBO.jmart_android.model.Store;
 import jonaJmartBO.jmart_android.request.LoginRequest;
 
+
+/**
+ * @author Jona
+ * @version 18/12/21
+ */
+
 public class LoginActivity extends AppCompatActivity implements Response.Listener<String>, Response.ErrorListener {
     private static final Gson gson = new Gson();
     private static Account loggedAccount = null;
-
     public static Account getLoggedAccount(){
         return loggedAccount;
     }
-
-//    public static void setLoggedAccount(Account account){
-//        loggedAccount = account;
-//    }
 
     private TextView register;
     private EditText emailText;

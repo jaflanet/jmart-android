@@ -7,7 +7,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 
 public class LoginRequest extends StringRequest {
-    private static final String URL = "http://192.168.0.9:8080/account/login";
+    private static final String URL = "http://192.168.0.8:8080/account/login";
     private final Map<String, String> params;
 
     public LoginRequest(String email, String password, Response.Listener<String> listener, Response.ErrorListener errorListener){

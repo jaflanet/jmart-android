@@ -14,6 +14,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import jonaJmartBO.jmart_android.request.CreateProductRequest;
 
+
+/**
+ * @author Jona
+ * @version 18/12/21
+ */
+
 public class CreateProductActivity extends AppCompatActivity {
     private Button btnCreateProduct, btnCancelProduct;
     private EditText et_createProductName, et_createProductPrice, et_createProductWeight, et_createProductDiscount;

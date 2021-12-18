@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabIndicatorColor="#03A9F4">
+        app:tabIndicatorColor="#FF9800">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/ti_product"
@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTabLayout"
-        tools:visibility="invisible">
+        tools:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="300dp"
-                android:backgroundTint="#2298FF"
+                android:backgroundTint="#FFC107"
                 android:text="Prev"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
-                android:backgroundTint="#2298FF"
+                android:backgroundTint="#FFC107"
                 android:text="Next"
                 app:layout_constraintBottom_toBottomOf="@+id/buttonPrevious"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
-                android:backgroundTint="#2298FF"
+                android:backgroundTint="#FFC107"
                 android:text="Go"
                 app:layout_constraintBottom_toBottomOf="@+id/inputPage"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -112,12 +112,12 @@
         android:id="@+id/cv_filter"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTabLayout"
-        tools:visibility="visible">
+        tools:visibility="invisible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -237,6 +237,7 @@
                 android:checked="false"
 
                 android:text="New"
+                android:textColorLink="#FFC107"
                 app:layout_constraintBottom_toBottomOf="@+id/textProductCondition"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textProductCondition"
@@ -249,6 +250,7 @@
                 android:layout_marginStart="170dp"
                 android:text="Used"
 
+                android:textColorLink="#FF9800"
                 app:layout_constraintBottom_toBottomOf="@+id/checkNew"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textProductCondition"
@@ -260,7 +262,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:layout_marginBottom="32dp"
-                android:backgroundTint="#2298FF"
+                android:backgroundTint="#FFC107"
                 android:text="Apply"
                 app:iconTint="#03A9F4"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -272,7 +274,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
                 android:layout_marginEnd="60dp"
-                android:backgroundTint="#2298FF"
+                android:backgroundTint="#FFC107"
                 android:text="Clear"
                 app:layout_constraintBottom_toBottomOf="@+id/buttonApply"
                 app:layout_constraintEnd_toEndOf="parent"

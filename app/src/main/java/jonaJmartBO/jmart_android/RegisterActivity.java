@@ -11,6 +11,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import jonaJmartBO.jmart_android.request.RegisterRequest;
 
+
+/**
+ * @author Jona
+ * @version 18/12/21
+ */
+
 public class RegisterActivity extends AppCompatActivity {
 
     @Override

@@ -6,8 +6,8 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 
 public class RequestFactory {
-    private static final String URL_FORMAT_ID = "http://192.168.0.9:8080/%s/%d";
-    private static final String URL_FORMAT_PAGE = "http://192.168.0.9:8080/%s/page";
+    private static final String URL_FORMAT_ID = "http://192.168.0.8:8080/%s/%d";
+    private static final String URL_FORMAT_PAGE = "http://192.168.0.8:8080/%s/page";
 
     public static StringRequest getById
             (

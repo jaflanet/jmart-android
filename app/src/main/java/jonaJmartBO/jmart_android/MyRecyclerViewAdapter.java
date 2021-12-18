@@ -15,6 +15,11 @@ import java.util.List;
 import jonaJmartBO.jmart_android.model.Product;
 
 
+/**
+ * @author Jona
+ * @version 18/12/21
+ */
+
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
     private List<Product> mData;
@@ -70,9 +75,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
 
+
     String getItem(int id) {
         return mData.get(id).toString();
     }
+    int getClickedItemId(int id){ return mData.get(id).id;}
 
 
     void setClickListener(ItemClickListener itemClickListener) {
@@ -80,8 +87,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
 
+
     public interface ItemClickListener {
         void onItemClick(View view, int position);
-
     }
 }

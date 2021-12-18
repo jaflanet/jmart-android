@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8DEDE"
+    android:background="#F8EECF"
     tools:context=".AboutMeActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="580dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="585dp"
+        android:layout_marginTop="10dp"
         app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,81 +22,85 @@
             tools:context=".AboutMeActivity">
 
             <TextView
-                android:id="@+id/textAccountDetail"
+                android:id="@+id/tv_accountDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="24dp"
                 android:text="Account Details"
+                android:textColor="#FFC107"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textName"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="57dp"
                 android:text="Name"
-                app:layout_constraintStart_toStartOf="@+id/textAccountDetail"
-                app:layout_constraintTop_toBottomOf="@+id/textAccountDetail" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textEmail"
+                android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:text="Email"
-                app:layout_constraintEnd_toEndOf="@+id/textName"
-                app:layout_constraintStart_toStartOf="@+id/textName"
-                app:layout_constraintTop_toBottomOf="@+id/textName" />
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
             <TextView
-                android:id="@+id/textBalance"
+                android:id="@+id/tv_balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:text="Balance"
-                app:layout_constraintEnd_toEndOf="@+id/textEmail"
-                app:layout_constraintStart_toStartOf="@+id/textEmail"
-                app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+                app:layout_constraintEnd_toEndOf="@+id/tv_email"
+                app:layout_constraintStart_toStartOf="@+id/tv_email"
+                app:layout_constraintTop_toBottomOf="@+id/tv_email" />
 
             <TextView
-                android:id="@+id/textUserName"
+                android:id="@+id/tv_userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:text="TextView"
                 android:textColor="#050000"
-                app:layout_constraintBottom_toBottomOf="@+id/textName"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_name"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textName" />
+                app:layout_constraintTop_toTopOf="@+id/tv_name" />
 
             <TextView
-                android:id="@+id/textUserEmail"
+                android:id="@+id/tv_userEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:text="TextView"
                 android:textColor="#050000"
-                app:layout_constraintBottom_toBottomOf="@+id/textEmail"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_email"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textEmail" />
+                app:layout_constraintTop_toTopOf="@+id/tv_email" />
 
             <TextView
-                android:id="@+id/textUserBalance"
+                android:id="@+id/tv_userBalance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:text="TextView"
-                android:textColor="#7EEA76"
-                app:layout_constraintBottom_toBottomOf="@+id/textBalance"
+                android:textColor="#2196F3"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_balance"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textBalance" />
+                app:layout_constraintTop_toTopOf="@+id/tv_balance" />
 
             <EditText
-                android:id="@+id/inputTopUpAmount"
+                android:id="@+id/et_topUpAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -104,44 +108,59 @@
                 android:hint="Top Up Amount"
                 android:inputType="numberDecimal"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/textAccountDetail"
-                app:layout_constraintStart_toStartOf="@+id/textAccountDetail"
-                app:layout_constraintTop_toBottomOf="@+id/textBalance"
+                app:layout_constraintStart_toStartOf="@+id/tv_balance"
+                app:layout_constraintTop_toBottomOf="@+id/tv_balance"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
-                android:id="@+id/buttonTopUp"
+                android:id="@+id/btnTopUp"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="#2298FF"
+                android:backgroundTint="#137C15"
                 android:text="TOP UP"
+                android:textColor="@color/white"
                 android:textSize="11sp"
-                app:layout_constraintBottom_toBottomOf="@+id/inputTopUpAmount"
+                app:iconTint="#F6F6F6"
+                app:layout_constraintBottom_toBottomOf="@+id/et_topUpAmount"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/inputTopUpAmount" />
+                app:layout_constraintTop_toTopOf="@+id/et_topUpAmount" />
 
             <Button
-                android:id="@+id/buttonRegisterStore"
+                android:id="@+id/btnRegisterStore"
                 android:layout_width="320dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="#2298FF"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FF5722"
                 android:text="REGISTER STORE"
                 android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/btnInvoiceRoute"
+                app:layout_constraintStart_toStartOf="@+id/btnInvoiceRoute"
+                app:layout_constraintTop_toBottomOf="@+id/btnInvoiceRoute" />
+
+            <Button
+                android:id="@+id/btnInvoiceRoute"
+                android:layout_width="320dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="13dp"
+                android:letterSpacing="0.07"
+                android:text="Invoices"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputTopUpAmount" />
+                app:layout_constraintTop_toBottomOf="@+id/et_topUpAmount"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_registerStore"
                 android:layout_width="324dp"
-                android:layout_height="350dp"
-                android:layout_marginBottom="10dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="5dp"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnInvoiceRoute"
+                tools:visibility="gone">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -152,7 +171,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="14dp"
                         android:text="Register Store"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -162,7 +181,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="-10dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="10dp"
                         android:ems="18"
                         android:hint="Name"
                         android:inputType="textPersonName"
@@ -175,7 +194,7 @@
                         android:id="@+id/et_storeAddress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:ems="18"
                         android:hint="Address"
                         android:inputType="textPersonName"
@@ -189,7 +208,7 @@
                         android:id="@+id/et_storePhoneNumber"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:ems="18"
                         android:hint="Phone Number"
                         android:inputType="textPersonName"
@@ -203,7 +222,7 @@
                         android:id="@+id/btnRegisterStoreConfirm"
                         android:layout_width="130dp"
                         android:layout_height="48dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="14dp"
                         android:backgroundTint="#FF5722"
                         android:text="REGISTER"
                         android:textSize="12sp"
@@ -227,88 +246,92 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_storeExists"
                 android:layout_width="324dp"
-                android:layout_height="300dp"
-                android:layout_marginBottom="40dp"
+                android:layout_height="270dp"
+                android:layout_marginTop="7dp"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnInvoiceRoute"
+                tools:visibility="visible">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tv_store"
+                        android:id="@+id/textTitle_store"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="16dp"
                         android:text="Store"
+                        android:textColor="#FFC107"
                         android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tv_storeName"
+                        android:id="@+id/textIndi_storeName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="72dp"
                         android:text="Name"
-                        app:layout_constraintEnd_toEndOf="@+id/tv_store"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_store" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tv_storeAddress"
+                        android:id="@+id/textIndi_storeAddress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="26dp"
                         android:text="Address"
-                        app:layout_constraintStart_toStartOf="@+id/tv_storeName"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_storeName" />
+                        app:layout_constraintStart_toStartOf="@+id/textIndi_storeName"
+                        app:layout_constraintTop_toBottomOf="@+id/textIndi_storeName" />
 
                     <TextView
-                        android:id="@+id/tv_storePhoneNumber"
+                        android:id="@+id/textIndi_storePhoneNumber"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="26dp"
                         android:text="Phone Number"
-                        app:layout_constraintStart_toStartOf="@+id/tv_storeAddress"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_storeAddress" />
+                        app:layout_constraintStart_toStartOf="@+id/textIndi_storeAddress"
+                        app:layout_constraintTop_toBottomOf="@+id/textIndi_storeAddress" />
 
                     <TextView
-                        android:id="@+id/tv_storeNameF"
+                        android:id="@+id/text_storeNameValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="20dp"
                         android:text="TextView"
                         android:textColor="#050000"
-                        app:layout_constraintBottom_toBottomOf="@+id/tv_storeName"
+                        app:layout_constraintBottom_toBottomOf="@+id/textIndi_storeName"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/tv_storeName" />
+                        app:layout_constraintTop_toTopOf="@+id/textIndi_storeName" />
 
                     <TextView
-                        android:id="@+id/tv_storeAddressF"
+                        android:id="@+id/text_storeAddressValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="20dp"
                         android:text="TextView"
                         android:textColor="#050000"
-                        app:layout_constraintBottom_toBottomOf="@+id/tv_storeAddress"
+                        app:layout_constraintBottom_toBottomOf="@+id/textIndi_storeAddress"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/tv_storeAddress" />
+                        app:layout_constraintTop_toTopOf="@+id/textIndi_storeAddress" />
 
                     <TextView
-                        android:id="@+id/tv_storePhoneNumberF"
+                        android:id="@+id/text_storePhoneNumberValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="20dp"
                         android:text="TextView"
                         android:textColor="#050000"
-                        app:layout_constraintBottom_toBottomOf="@+id/tv_storePhoneNumber"
+                        app:layout_constraintBottom_toBottomOf="@+id/textIndi_storePhoneNumber"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/tv_storePhoneNumber" />
+                        app:layout_constraintTop_toTopOf="@+id/textIndi_storePhoneNumber" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

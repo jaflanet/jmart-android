@@ -34,6 +34,7 @@ import jonaJmartBO.jmart_android.model.Product;
 
 public class MainActivity extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener {
     private static final Gson gson = new Gson();
+    public static final String EXTRA_PRODUCTID = "jonaJmartBO.jmart_android.EXTRA_PRODUCTID";
     MyRecyclerViewAdapter adapter;
     private TabLayout mainTabLayout;
     private CardView cv_product;
@@ -143,11 +144,12 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
         btnApply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Filter Product", Toast.LENGTH_LONG).show();
                 String productName = inputProductName.getText().toString();
                 String lowestPrice= inputLowestPrice.getText().toString();
                 String highestPrice = inputHighestPrice.getText().toString();
                 String category = spinner_filterCategory.getSelectedItem().toString();
-                StringRequest filterRequest = new StringRequest(Request.Method.GET, "http://192.168.0.9:8080/product/getFiltered?pageSize=10&accountId="+LoginActivity.getLoggedAccount().id+"&search="+productName+"&minPrice="+lowestPrice+"&maxPrice="+highestPrice+"&category="+category, new Response.Listener<String>() {
+                StringRequest filterRequest = new StringRequest(Request.Method.GET, "http://192.168.0.8:8080/product/getFiltered?pageSize=10&search="+productName+"&minPrice="+lowestPrice+"&maxPrice="+highestPrice+"&category="+category, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         JsonReader reader = new JsonReader(new StringReader(response));
@@ -192,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
     }
     //Fetch Products Request Method
     public void fetchProduct(List<Product> productNames, int page, RequestQueue queue, boolean refreshAdapter){
-        StringRequest fetchProductsRequest = new StringRequest(Request.Method.GET, "http://192.168.0.9:8080/product/page?page="+page+"&pageSize=10", new Response.Listener<String>() {
+        StringRequest fetchProductsRequest = new StringRequest(Request.Method.GET, "http://192.168.0.8:8080/product/page?page="+page+"&pageSize=10", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 JsonReader reader = new JsonReader(new StringReader(response));
@@ -221,7 +223,10 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
     //RecycleView Item ClickListener
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(getApplicationContext(), "Testing click product", Toast.LENGTH_LONG).show();
+        int clickedItemId = adapter.getClickedItemId(position);
+        Intent intent = new Intent(getApplicationContext(), ProductDetailActivity.class);
+        intent.putExtra(EXTRA_PRODUCTID, clickedItemId);
+        startActivity(intent);
     }
     //Menu
     @Override
